@@ -10,7 +10,7 @@ const ProgressBar = ({
 }) => {
   const stepsData = [...new Array(Number(steps)).keys()];
   return (
-    <div className="d-flex align-items-center">
+    <div className="d-flex align-items-center flex-wrap">
       {stepsData &&
         stepsData.map((step) => {
           return (

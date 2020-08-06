@@ -1,47 +1,68 @@
-.progress-bar-shape {
-  margin: 10px;
-  background: #D3D3D3;
-  cursor: pointer;
-}
+.progress-bar-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 768px) {
+   flex-direction: column;
+  }
+  .progress-bar-shape {
+    margin: 10px;
+    background: #D3D3D3;
+    cursor: pointer;
+  }
 
-.square {
-  width: 40px;
-  height: 40px;
-}
+  .square {
+    width: 40px;
+    height: 40px;
+    @media (max-width: 768px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
 
-.circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
+  .circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    @media (max-width: 768px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
 
-.rectangle {
-  width: 80px;
-  height: 40px;
-}
+  .rectangle {
+    width: 80px;
+    height: 40px;
+    @media (max-width: 768px) {
+      width: 30px;
+      height: 15px;
+    }
+  }
 
-.shape-1{
-  background-color: #ED3118;
-}
+  .shape-1{
+    background-color: #ED3118;
+  }
 
-.shape-2{
-  background-color: #ed6663;
-}
-.shape-3{
-  background-color: #b52b65;
-}
-.shape-4{
-  background-color: #3c2c3e;
-}
-.shape-5{
-  background-color: #59405c;
-}
-.shape-6{
-  background-color: #445C3B;
-}
-.shape-7{
-  background-color: #0E5C00;
-}
-.shape-8{
-  background-color: red;
+  .shape-2{
+    background-color: #ed6663;
+  }
+  .shape-3{
+    background-color: #b52b65;
+  }
+  .shape-4{
+    background-color: #3c2c3e;
+  }
+  .shape-5{
+    background-color: #59405c;
+  }
+  .shape-6{
+    background-color: #445C3B;
+  }
+  .shape-7{
+    background-color: #0E5C00;
+  }
+  .shape-8{
+    background-color: red;
+  }
 }

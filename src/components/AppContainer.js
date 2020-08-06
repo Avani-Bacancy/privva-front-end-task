@@ -55,6 +55,7 @@ export default class AppContainer extends Component {
           isCancel={isCancel}
           onCancel={this.onCancel}
         />
+        <p>Note: By clicking on steps you can see progress.</p>
       </div>
     );
   }
