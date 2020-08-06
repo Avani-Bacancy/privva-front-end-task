@@ -1,0 +1,26 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["react", "prettier"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 6,
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+  },
+  "rules": {
+    "max-len": ["error", { "code": 85 }],
+    "no-console": "warn",
+    "no-eval": "error",
+    "react/prop-types": 0
+  }
+}
