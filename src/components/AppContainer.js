@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import ConfigureProgressBar from "./ConfigureProgressBar";
+import ProgressBar from "./ProgressBar";
 
 export default class AppContainer extends Component {
   constructor() {
     super();
     this.state = {
-      steps: 3,
+      steps: 5,
       progressBarColor: "green",
       style: "square",
+      progress: 0,
+      isCancel: false,
     };
   }
 
@@ -16,8 +19,25 @@ export default class AppContainer extends Component {
     this.setState({ [name]: value });
   };
 
+  onProgressChange = (value) => {
+    this.setState({ progress: value });
+  };
+
+  onCancel = (value) => {
+    if (value) {
+      this.setState({
+        isCancel: value,
+      });
+    } else {
+      this.setState({
+        isCancel: value,
+        progress: 0,
+      });
+    }
+  };
+
   render() {
-    const { steps, progressBarColor, style } = this.state;
+    const { steps, progressBarColor, style, progress, isCancel } = this.state;
     return (
       <div className="container mt-5">
         <ConfigureProgressBar
@@ -26,6 +46,34 @@ export default class AppContainer extends Component {
           style={style}
           onChange={this.onChange}
         />
+        <div
+          className="mt-5 p-5 border border-dark d-flex 
+        align-items-center justify-content-between"
+        >
+          <ProgressBar
+            style={style}
+            steps={steps}
+            progressBarColor={progressBarColor}
+            progress={progress}
+            onProgressChange={this.onProgressChange}
+            isCancel={isCancel}
+          />
+          {isCancel ? (
+            <button
+              className="btn btn-md btn-primary"
+              onClick={() => this.onCancel(false)}
+            >
+              Go
+            </button>
+          ) : (
+            <button
+              className="btn btn-md btn-danger"
+              onClick={() => this.onCancel(true)}
+            >
+              Cancel
+            </button>
+          )}
+        </div>
       </div>
     );
   }
