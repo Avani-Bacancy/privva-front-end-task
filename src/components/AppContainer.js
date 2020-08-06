@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ConfigureProgressBar from "./ConfigureProgressBar";
-import ProgressBar from "./ProgressBar";
+import ProgressBarContainer from "./ProgressBarContainer";
 
 export default class AppContainer extends Component {
   constructor() {
@@ -46,34 +46,15 @@ export default class AppContainer extends Component {
           style={style}
           onChange={this.onChange}
         />
-        <div
-          className="mt-5 p-5 border border-dark d-flex 
-        align-items-center justify-content-between"
-        >
-          <ProgressBar
-            style={style}
-            steps={steps}
-            progressBarColor={progressBarColor}
-            progress={progress}
-            onProgressChange={this.onProgressChange}
-            isCancel={isCancel}
-          />
-          {isCancel ? (
-            <button
-              className="btn btn-md btn-primary"
-              onClick={() => this.onCancel(false)}
-            >
-              Go
-            </button>
-          ) : (
-            <button
-              className="btn btn-md btn-danger"
-              onClick={() => this.onCancel(true)}
-            >
-              Cancel
-            </button>
-          )}
-        </div>
+        <ProgressBarContainer
+          style={style}
+          steps={steps}
+          progressBarColor={progressBarColor}
+          progress={progress}
+          onProgressChange={this.onProgressChange}
+          isCancel={isCancel}
+          onCancel={this.onCancel}
+        />
       </div>
     );
   }
